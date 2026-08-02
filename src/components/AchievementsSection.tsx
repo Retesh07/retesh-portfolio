@@ -95,13 +95,13 @@ function AchievementCard({ ach, index }: { ach: typeof achievements[0]; index: n
           <motion.h3
             animate={hovered ? { x: 3 } : { x: 0 }}
             transition={{ duration: 0.3 }}
-            className="text-lg md:text-xl font-bold text-white mb-3 tracking-[0.01em] relative z-10"
+            className="text-xl md:text-2xl font-bold text-white mb-3 tracking-[0.01em] relative z-10"
           >
             {ach.title}
           </motion.h3>
 
           {/* Description */}
-          <p className="text-white/85 text-sm leading-relaxed relative z-10 group-hover:text-white transition-colors duration-300">
+          <p className="text-slate-100 text-base sm:text-[15.5px] leading-relaxed relative z-10 group-hover:text-white transition-colors duration-300">
             {ach.description}
           </p>
         </div>
@@ -121,15 +121,15 @@ function AchievementCard({ ach, index }: { ach: typeof achievements[0]; index: n
 export default function AchievementsSection() {
   return (
     <section id="achievements" className="relative">
-      <div className="light-section light-section-bottom py-16 md:py-28">
+      <div className="light-section light-section-bottom py-12 md:py-20">
         <div className="max-w-[1400px] mx-auto px-6 md:px-12">
           {/* Heading */}
-          <div className="text-center mb-10 md:mb-16">
+          <div className="text-center mb-12 md:mb-16">
             <motion.p
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-[11px] md:text-[12px] tracking-[0.25em] text-blue-400 font-semibold uppercase mb-2"
+              className="text-xs md:text-sm tracking-[0.25em] text-blue-400 font-semibold uppercase mb-2"
             >
               RECOGNITION & AWARDS
             </motion.p>

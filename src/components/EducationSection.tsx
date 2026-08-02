@@ -30,15 +30,15 @@ export default function EducationSection() {
   };
 
   return (
-    <section id="education" className="relative py-16 md:py-28 bg-transparent">
+    <section id="education" className="relative py-12 md:py-20 bg-transparent">
       <div className="max-w-[1400px] mx-auto px-6 md:px-12">
         {/* Heading */}
-        <div className="text-center mb-10 md:mb-12">
+        <div className="text-center mb-12 md:mb-16">
           <motion.p
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-[11px] md:text-[12px] tracking-[0.25em] text-purple-400 font-semibold uppercase mb-2"
+            className="text-xs md:text-sm tracking-[0.25em] text-purple-400 font-semibold uppercase mb-2"
           >
             ACADEMIC BACKGROUND
           </motion.p>
@@ -96,23 +96,23 @@ export default function EducationSection() {
                 <motion.h3
                   animate={hovered ? { x: 3 } : { x: 0 }}
                   transition={{ duration: 0.3 }}
-                  className="text-2xl md:text-3xl font-bold text-white mb-2"
+                  className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-2"
                 >
                   {education.institution}
                 </motion.h3>
-                <p className="text-white/85 text-sm md:text-base">
+                <p className="text-white/90 text-base sm:text-lg font-medium">
                   {education.degree}
                 </p>
               </div>
               <div className="text-left md:text-right">
                 <motion.p
-                  animate={hovered ? { color: "rgba(255,255,255,0.9)" } : { color: "rgba(255,255,255,0.75)" }}
+                  animate={hovered ? { color: "rgba(255,255,255,1)" } : { color: "rgba(255,255,255,0.85)" }}
                   transition={{ duration: 0.3 }}
-                  className="text-[13px] tracking-[0.15em] font-medium"
+                  className="text-sm sm:text-base tracking-[0.15em] font-semibold"
                 >
                   {education.duration}
                 </motion.p>
-                <p className="text-[13px] tracking-[0.15em] text-white/65 mt-1">
+                <p className="text-xs sm:text-sm tracking-[0.15em] text-white/70 mt-1">
                   {education.location}
                 </p>
               </div>
@@ -131,11 +131,11 @@ export default function EducationSection() {
                 <motion.span
                   animate={hovered ? { scale: 1.3, color: "#4a7cff" } : { scale: 1, color: "rgba(74,124,255,0.9)" }}
                   transition={{ duration: 0.3 }}
-                  className="mt-1 text-sm"
+                  className="mt-1 text-sm sm:text-base"
                 >
                   ✦
                 </motion.span>
-                <p className="text-white/85 text-sm leading-relaxed group-hover:text-white">
+                <p className="text-slate-100 text-base sm:text-[16.5px] leading-relaxed group-hover:text-white">
                   {h}
                 </p>
               </motion.div>
@@ -143,10 +143,10 @@ export default function EducationSection() {
 
             {/* Coursework */}
             <div className="mt-6 pt-6 border-t border-white/15 relative z-10">
-              <p className="text-[11px] tracking-[0.2em] text-white/65 font-medium mb-3">
+              <p className="text-xs tracking-[0.2em] text-white/70 font-semibold mb-3 uppercase">
                 RELEVANT COURSEWORK
               </p>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2.5">
                 {education.coursework.map((course, i) => (
                   <motion.span
                     key={course}
@@ -154,8 +154,8 @@ export default function EducationSection() {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.3, delay: 0.4 + i * 0.05 }}
-                    whileHover={{ scale: 1.1, y: -2 }}
-                    className="skill-pill text-xs cursor-default"
+                    whileHover={{ scale: 1.08, y: -2 }}
+                    className="skill-pill text-xs sm:text-sm cursor-default"
                   >
                     {course}
                   </motion.span>

@@ -80,14 +80,14 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
 
             <div>
               {/* Category tag */}
-              <p className="text-[13px] tracking-[0.22em] text-white/70 font-medium mb-2">
+              <p className="text-[13px] tracking-[0.22em] text-blue-400 font-semibold mb-2">
                 {project.category}
               </p>
               {/* Title */}
               <motion.h3
                 animate={isHovered ? { x: 4 } : { x: 0 }}
                 transition={{ duration: 0.3 }}
-                className="text-2xl md:text-3xl font-bold text-white"
+                className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white"
               >
                 {project.title}
               </motion.h3>
@@ -142,17 +142,17 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
 
         {/* Tech badge */}
         <motion.div
-          className="mb-6 relative z-10"
-          animate={isHovered ? { opacity: 1 } : { opacity: 0.85 }}
+          className="mb-5 relative z-10"
+          animate={isHovered ? { opacity: 1 } : { opacity: 0.9 }}
           transition={{ duration: 0.3 }}
         >
-          <span className="inline-block px-3.5 py-1 rounded-md bg-white/[0.08] border border-white/20 text-[13px] tracking-wide text-white/85 font-mono">
+          <span className="inline-block px-4 py-1.5 rounded-md bg-white/[0.08] border border-white/20 text-xs sm:text-[13.5px] tracking-wide text-white/90 font-mono">
             {project.tech}
           </span>
         </motion.div>
 
         {/* Description bullets — staggered on hover */}
-        <div className="space-y-3 pl-0 md:pl-[calc(clamp(2.5rem,6vw,4rem)+1.5rem)] relative z-10">
+        <div className="space-y-3.5 pl-0 md:pl-[calc(clamp(2.5rem,6vw,4rem)+1.5rem)] relative z-10">
           {project.description.map((desc, j) => (
             <motion.div
               key={j}
@@ -163,11 +163,11 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
               className="flex items-start gap-3"
             >
               <motion.span
-                animate={isHovered ? { backgroundColor: "#4a7cff", scale: 1.25 } : { backgroundColor: "rgba(255,255,255,0.5)", scale: 1 }}
+                animate={isHovered ? { backgroundColor: "#4a7cff", scale: 1.25 } : { backgroundColor: "rgba(255,255,255,0.6)", scale: 1 }}
                 transition={{ duration: 0.3 }}
                 className="mt-2.5 w-1.5 h-1.5 rounded-full shrink-0"
               />
-              <p className="text-white/85 text-sm md:text-[15px] leading-relaxed tracking-[0.01em] group-hover:text-white transition-colors duration-300">
+              <p className="text-slate-100 text-base sm:text-[16px] leading-relaxed tracking-[0.01em] group-hover:text-white transition-colors duration-300">
                 {desc}
               </p>
             </motion.div>
@@ -180,15 +180,15 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
 
 export default function ProjectsSection() {
   return (
-    <section id="projects" className="relative py-16 md:py-28 bg-transparent">
+    <section id="projects" className="relative py-12 md:py-20 bg-transparent">
       <div className="max-w-[1400px] mx-auto px-6 md:px-12">
         {/* Heading */}
-        <div className="text-center mb-10 md:mb-16">
+        <div className="text-center mb-12 md:mb-16">
           <motion.p
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-[11px] md:text-[12px] tracking-[0.25em] text-blue-400 font-semibold uppercase mb-2"
+            className="text-xs md:text-sm tracking-[0.25em] text-blue-400 font-semibold uppercase mb-2"
           >
             FEATURED WORK
           </motion.p>
@@ -204,7 +204,7 @@ export default function ProjectsSection() {
         </div>
 
         {/* Project Cards */}
-        <div className="space-y-8">
+        <div className="space-y-6 md:space-y-8">
           {projects.map((project, i) => (
             <ProjectCard key={project.number} project={project} index={i} />
           ))}

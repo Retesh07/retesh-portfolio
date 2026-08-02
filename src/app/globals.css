@@ -94,7 +94,7 @@ body {
 
 /* === SECTION HEADINGS === */
 .section-heading-massive {
-  font-size: clamp(2rem, 6vw, 4.25rem);
+  font-size: clamp(2.25rem, 6.5vw, 4.75rem);
   font-weight: 800;
   letter-spacing: -0.02em;
   line-height: 1.1;
@@ -133,12 +133,13 @@ body {
 .skill-pill {
   display: inline-flex;
   align-items: center;
-  padding: 0.5rem 1.25rem;
+  padding: 0.55rem 1.35rem;
   border-radius: 9999px;
   border: 1px solid rgba(255, 255, 255, 0.25);
   background: rgba(255, 255, 255, 0.1);
-  font-size: 0.875rem;
-  color: #e5e7eb;
+  font-size: 0.925rem;
+  font-weight: 500;
+  color: #f1f5f9;
   transition: all 0.3s ease;
   white-space: nowrap;
 }

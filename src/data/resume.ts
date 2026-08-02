@@ -56,7 +56,7 @@ export const personalInfo = {
 
 // ── About / Bio ────────────────────────────────────────────────
 export const aboutBio =
-  "I'm a Computer Science student at PES University with a strong interest in AI-powered applications, backend engineering, and scalable systems. My work includes Agentic RAG platforms, LLM-based applications, distributed systems, and full-stack development. As a 4× CNR Rao Merit Scholar and 1st-place Ideathon winner, I enjoy building practical solutions that combine innovation, performance, and real-world impact.";
+  "I'm a Computer Science student at PES University with a strong interest in AI-powered applications, backend engineering, and scalable systems. My work includes Agentic RAG platforms, LLM-based applications, distributed systems, and full-stack development. As a 5× CNR Rao Merit Scholar and 1st-place Ideathon winner, I enjoy building practical solutions that combine innovation, performance, and real-world impact.";
 
 // ── Education ──────────────────────────────────────────────────
 export const education = {
@@ -66,7 +66,7 @@ export const education = {
   duration: "Aug 2023 – May 2027",
   location: "India",
   highlights: [
-    "4× CNR Rao Merit Scholarship recipient for maintaining top 25% academic standing",
+    "5× CNR Rao Merit Scholarship recipient for maintaining top 25% academic standing",
   ],
   coursework: [
     "Data Structures",
@@ -227,9 +227,9 @@ export const achievements: Achievement[] = [
   },
   {
     icon: "🎓",
-    title: "CNR Rao Merit Scholarship (4×)",
+    title: "CNR Rao Merit Scholarship (5×)",
     description:
-      "Awarded for academic excellence by ranking consistently in the top 25% of the batch across four semesters; received a total scholarship of ₹25,600 with certificates of merit.",
+      "Awarded for academic excellence by ranking consistently in the top 25% of the batch across five semesters; received a total scholarship of ₹25,600 with certificates of merit.",
   },
   {
     icon: "⚡",

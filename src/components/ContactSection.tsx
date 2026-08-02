@@ -127,7 +127,7 @@ function ContactCard({ item, index }: { item: typeof contactItems[0]; index: num
         </div>
 
         {/* Label */}
-        <p className="text-[11px] tracking-[0.2em] text-white/70 font-medium mb-2 relative z-10">
+        <p className="text-xs tracking-[0.2em] text-white/75 font-semibold mb-2 relative z-10">
           {item.label}
         </p>
 
@@ -135,7 +135,7 @@ function ContactCard({ item, index }: { item: typeof contactItems[0]; index: num
         <motion.p
           animate={hovered ? { x: 4, color: "rgba(255,255,255,1)" } : { x: 0, color: "rgba(255,255,255,0.95)" }}
           transition={{ duration: 0.3 }}
-          className="font-semibold text-sm md:text-base break-all relative z-10 text-white"
+          className="font-bold text-base sm:text-lg break-all relative z-10 text-white"
         >
           {item.value}
         </motion.p>
@@ -155,7 +155,7 @@ function ContactCard({ item, index }: { item: typeof contactItems[0]; index: num
 
 export default function ContactSection() {
   return (
-    <section id="contact" className="relative py-16 md:py-32 bg-transparent">
+    <section id="contact" className="relative py-12 md:py-20 bg-transparent">
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
@@ -165,12 +165,12 @@ export default function ContactSection() {
 
       <div className="relative max-w-[1400px] mx-auto px-6 md:px-12">
         {/* Heading */}
-        <div className="text-center mb-10 md:mb-14">
+        <div className="text-center mb-12 md:mb-16">
           <motion.p
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-[11px] md:text-[12px] tracking-[0.25em] text-purple-400 font-semibold uppercase mb-2"
+            className="text-xs md:text-sm tracking-[0.25em] text-purple-400 font-semibold uppercase mb-2"
           >
             LET'S CONNECT
           </motion.p>
@@ -188,7 +188,7 @@ export default function ContactSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.15 }}
-            className="text-center text-[12px] md:text-[13px] tracking-[0.2em] text-white/70 font-medium mt-4"
+            className="text-center text-xs md:text-[13.5px] tracking-[0.2em] text-white/80 font-medium mt-3"
           >
             PICK WHICHEVER CHANNEL SUITS YOU
           </motion.p>
