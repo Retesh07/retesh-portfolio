@@ -1,0 +1,200 @@
+"use client";
+
+import { useRef, useState } from "react";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { contactItems } from "@/data/resume";
+
+function ContactIcon({ type }: { type: string }) {
+  const iconClass = "w-6 h-6";
+  switch (type) {
+    case "email":
+      return (
+        <svg className={iconClass} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+        </svg>
+      );
+    case "linkedin":
+      return (
+        <svg className={iconClass} fill="currentColor" viewBox="0 0 24 24">
+          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+        </svg>
+      );
+    case "github":
+      return (
+        <svg className={iconClass} fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+        </svg>
+      );
+    case "leetcode":
+      return (
+        <svg className={iconClass} fill="currentColor" viewBox="0 0 24 24">
+          <path d="M16.102 17.93l-2.697 2.607c-.466.45-1.135.528-1.691.198l-2.26-1.344a1.299 1.299 0 01-.487-1.78l3.66-6.19a.897.897 0 00-.142-1.127.915.915 0 00-1.144-.092L6.1 13.567a4.298 4.298 0 00-1.892 3.567 4.292 4.292 0 001.996 3.585l2.257 1.342c1.378.82 3.056.626 4.21-.491l2.698-2.608a.9.9 0 10-1.267-1.282zM20.884 11.1l-8.543-8.243a4.29 4.29 0 00-5.96.142 4.296 4.296 0 00-.143 5.96l2.697 2.607a.9.9 0 001.267-1.282L7.505 7.677a2.495 2.495 0 01.083-3.465 2.49 2.49 0 013.465-.083l8.543 8.243a.9.9 0 101.288-1.272zm-7.618 1.954a.9.9 0 00-1.27.025l-2.698 2.608a.9.9 0 101.27 1.271l2.698-2.608a.9.9 0 00-.001-1.296z" />
+        </svg>
+      );
+    default:
+      return null;
+  }
+}
+
+function ContactCard({ item, index }: { item: typeof contactItems[0]; index: number }) {
+  const cardRef = useRef<HTMLAnchorElement>(null);
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+  const [hovered, setHovered] = useState(false);
+
+  const springCfg = { stiffness: 200, damping: 22 };
+  const rotateX = useSpring(useTransform(mouseY, [-0.5, 0.5], [6, -6]), springCfg);
+  const rotateY = useSpring(useTransform(mouseX, [-0.5, 0.5], [-6, 6]), springCfg);
+  const glowX = useTransform(mouseX, [-0.5, 0.5], [0, 100]);
+  const glowY = useTransform(mouseY, [-0.5, 0.5], [0, 100]);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    const rect = cardRef.current?.getBoundingClientRect();
+    if (!rect) return;
+    mouseX.set((e.clientX - rect.left) / rect.width - 0.5);
+    mouseY.set((e.clientY - rect.top) / rect.height - 0.5);
+  };
+
+  const handleMouseLeave = () => {
+    mouseX.set(0);
+    mouseY.set(0);
+    setHovered(false);
+  };
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6, delay: index * 0.1 }}
+      style={{ perspective: 800 }}
+    >
+      <motion.a
+        ref={cardRef}
+        href={item.href}
+        target={item.icon === "email" || item.icon === "phone" ? "_self" : "_blank"}
+        rel="noopener noreferrer"
+        onMouseMove={handleMouseMove}
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={handleMouseLeave}
+        style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
+        className="contact-card group block relative overflow-hidden"
+      >
+        {/* Mouse-tracking spotlight */}
+        <motion.div
+          className="absolute inset-0 pointer-events-none rounded-[inherit]"
+          style={{
+            background: `radial-gradient(circle at ${glowX}% ${glowY}%, rgba(74,124,255,0.13) 0%, transparent 60%)`,
+            opacity: hovered ? 1 : 0,
+            transition: "opacity 0.3s",
+          }}
+        />
+
+        {/* Top shimmer */}
+        <motion.div
+          className="absolute top-0 left-[8%] right-[8%] h-[1px]"
+          style={{
+            background: "linear-gradient(90deg, transparent, rgba(74,124,255,0.6), transparent)",
+          }}
+          animate={{ opacity: hovered ? 1 : 0 }}
+          transition={{ duration: 0.3 }}
+        />
+
+        {/* Icon + arrow row */}
+        <div className="flex items-start justify-between mb-12 relative z-10">
+          <motion.div
+            animate={
+              hovered
+                ? { scale: 1.1, borderColor: "rgba(255,255,255,0.4)", color: "rgba(255,255,255,1)" }
+                : { scale: 1, borderColor: "rgba(255,255,255,0.15)", color: "rgba(255,255,255,0.6)" }
+            }
+            transition={{ duration: 0.3 }}
+            className="w-12 h-12 rounded-full border flex items-center justify-center"
+          >
+            <ContactIcon type={item.icon} />
+          </motion.div>
+          <motion.svg
+            animate={hovered ? { rotate: 0, x: 2, y: -2, color: "rgba(255,255,255,0.8)" } : { rotate: -45, x: 0, y: 0, color: "rgba(255,255,255,0.3)" }}
+            transition={{ duration: 0.3 }}
+            className="w-4 h-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={2}
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M7 17L17 7M17 7H7M17 7v10" />
+          </motion.svg>
+        </div>
+
+        {/* Label */}
+        <p className="text-[11px] tracking-[0.2em] text-white/30 font-medium mb-2 relative z-10">
+          {item.label}
+        </p>
+
+        {/* Value */}
+        <motion.p
+          animate={hovered ? { x: 4, color: "rgba(255,255,255,1)" } : { x: 0, color: "rgba(255,255,255,0.9)" }}
+          transition={{ duration: 0.3 }}
+          className="font-semibold text-sm md:text-base break-all relative z-10"
+        >
+          {item.value}
+        </motion.p>
+
+        {/* Bottom gradient bar */}
+        <motion.div
+          className="absolute bottom-0 left-0 right-0 h-[2px] rounded-full"
+          style={{ background: "linear-gradient(90deg, #4a7cff, #7c3aed)" }}
+          animate={{ scaleX: hovered ? 1 : 0 }}
+          initial={{ scaleX: 0 }}
+          transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
+        />
+      </motion.a>
+    </motion.div>
+  );
+}
+
+export default function ContactSection() {
+  return (
+    <section id="contact" className="relative py-24 md:py-32 bg-transparent">
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          boxShadow: "inset 0 0 120px rgba(74, 124, 255, 0.04), inset 0 0 60px rgba(124, 58, 237, 0.02)",
+        }}
+      />
+
+      <div className="relative max-w-[1400px] mx-auto px-6 md:px-12">
+        {/* Heading */}
+        <div className="overflow-hidden mb-6">
+          <motion.h2
+            initial={{ y: 80, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: false, margin: "-100px" }}
+            transition={{ duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="section-heading-massive text-center metallic-text"
+          >
+            GET IN TOUCH
+          </motion.h2>
+        </div>
+
+        {/* Subtitle */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="text-center text-[13px] tracking-[0.25em] text-white/40 font-medium mb-20"
+        >
+          PICK WHICHEVER CHANNEL SUITS YOU
+        </motion.p>
+
+        {/* Contact cards grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {contactItems.map((item, i) => (
+            <ContactCard key={item.label} item={item} index={i} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

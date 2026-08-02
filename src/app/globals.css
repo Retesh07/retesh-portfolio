@@ -1,0 +1,228 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-primary: #000000;
+  --color-bg-secondary: #0a0a0f;
+  --color-bg-card: #141418;
+  --color-bg-light: #f0f2f5;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #8a8f98;
+  --color-text-muted: #555a63;
+  --color-accent: #4a7cff;
+  --color-accent-purple: #7c3aed;
+  --color-accent-glow: rgba(74, 124, 255, 0.15);
+  --color-border-subtle: rgba(255, 255, 255, 0.08);
+  --color-border-hover: rgba(255, 255, 255, 0.2);
+  --color-glass: rgba(20, 20, 24, 0.8);
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+
+/* === BASE RESET === */
+html {
+  scroll-behavior: smooth;
+  background-color: #000000;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #000000;
+  color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* === CUSTOM SCROLLBAR === */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* === SELECTION === */
+::selection {
+  background-color: rgba(74, 124, 255, 0.3);
+  color: #ffffff;
+}
+
+/* === GLASSMORPHISM UTILITIES === */
+.glass-card {
+  background: rgba(20, 20, 24, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card-hover:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(20, 20, 24, 0.8);
+}
+
+/* === GRADIENT TEXT === */
+.gradient-text {
+  background: linear-gradient(135deg, #ffffff 0%, #8a8f98 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-accent {
+  background: linear-gradient(135deg, #4a7cff 0%, #7c3aed 50%, #4a7cff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* === METALLIC TEXT (like reference headings) === */
+.metallic-text {
+  background: linear-gradient(180deg, #6b7280 0%, #374151 40%, #1f2937 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* === SECTION HEADINGS — Massive bold like reference === */
+.section-heading-massive {
+  font-size: clamp(3rem, 10vw, 8rem);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+/* === LIGHT SECTION (Services / Expertise style) === */
+.light-section {
+  background: transparent;
+  color: #ffffff;
+  border-radius: 2rem 2rem 0 0;
+  position: relative;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.light-section-bottom {
+  background: transparent;
+  color: #ffffff;
+  border-radius: 0 0 2rem 2rem;
+  position: relative;
+}
+
+/* === NUMBERED LIST ITEM (01, 02, etc.) === */
+.numbered-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2rem;
+  padding: 3rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.numbered-item:first-child {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* === PILL BADGE === */
+.skill-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1.25rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.05);
+  font-size: 0.875rem;
+  color: #d1d5db;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+.skill-pill:hover {
+  border-color: rgba(74, 124, 255, 0.5);
+  background: rgba(74, 124, 255, 0.1);
+  color: #ffffff;
+}
+
+/* === CTA GRADIENT BUTTON === */
+.cta-gradient {
+  background: linear-gradient(135deg, #4a7cff, #7c3aed);
+  padding: 1rem 2.5rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.cta-gradient::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #7c3aed, #4a7cff);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.cta-gradient:hover::before {
+  opacity: 1;
+}
+.cta-gradient span {
+  position: relative;
+  z-index: 1;
+}
+
+/* === CONTACT CARD (glassmorphic like reference) === */
+.contact-card {
+  background: #141418;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.75rem;
+  padding: 2rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.contact-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(74, 124, 255, 0.05), transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.contact-card:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-4px);
+}
+.contact-card:hover::before {
+  opacity: 1;
+}
+
+/* === OUTER GLOW BORDER (like reference page border) === */
+.page-glow {
+  box-shadow: inset 0 0 120px rgba(74, 124, 255, 0.03),
+              inset 0 0 60px rgba(124, 58, 237, 0.02);
+}
+
+/* === Animated underline === */
+.animated-underline {
+  position: relative;
+}
+.animated-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #ffffff;
+  transition: width 0.3s ease;
+}
+.animated-underline:hover::after {
+  width: 100%;
+}
