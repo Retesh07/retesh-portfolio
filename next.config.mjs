@@ -4,9 +4,7 @@ const nextConfig = {
     unoptimized: false,
   },
   devIndicators: {
-    buildActivityPosition: 'bottom-right',
-    appIsrStatus: false,
-    buildActivity: false,
+    position: 'bottom-right',
   },
 };
 
