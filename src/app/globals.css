@@ -57,27 +57,27 @@ body {
 
 /* === GLASSMORPHISM UTILITIES === */
 .glass-card {
-  background: rgba(20, 20, 24, 0.6);
+  background: rgba(20, 20, 24, 0.85);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .glass-card-hover:hover {
-  border-color: rgba(255, 255, 255, 0.2);
-  background: rgba(20, 20, 24, 0.8);
+  border-color: rgba(255, 255, 255, 0.35);
+  background: rgba(26, 26, 32, 0.95);
 }
 
 /* === GRADIENT TEXT === */
 .gradient-text {
-  background: linear-gradient(135deg, #ffffff 0%, #8a8f98 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .gradient-text-accent {
-  background: linear-gradient(135deg, #4a7cff 0%, #7c3aed 50%, #4a7cff 100%);
+  background: linear-gradient(135deg, #60a5fa 0%, #a855f7 50%, #60a5fa 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -85,7 +85,8 @@ body {
 
 /* === METALLIC TEXT === */
 .metallic-text {
-  background: linear-gradient(180deg, #6b7280 0%, #374151 40%, #1f2937 100%);
+  color: #ffffff;
+  background: linear-gradient(180deg, #ffffff 0%, #e2e8f0 60%, #cbd5e1 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -93,10 +94,10 @@ body {
 
 /* === SECTION HEADINGS === */
 .section-heading-massive {
-  font-size: clamp(3rem, 10vw, 8rem);
-  font-weight: 900;
+  font-size: clamp(2rem, 6vw, 4.25rem);
+  font-weight: 800;
   letter-spacing: -0.02em;
-  line-height: 0.95;
+  line-height: 1.1;
   text-transform: uppercase;
 }
 
@@ -106,7 +107,7 @@ body {
   color: #ffffff;
   border-radius: 2rem 2rem 0 0;
   position: relative;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .light-section-bottom {
@@ -122,10 +123,10 @@ body {
   grid-template-columns: auto 1fr;
   gap: 2rem;
   padding: 3rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 .numbered-item:first-child {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 /* === PILL BADGE === */
@@ -134,16 +135,16 @@ body {
   align-items: center;
   padding: 0.5rem 1.25rem;
   border-radius: 9999px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.1);
   font-size: 0.875rem;
-  color: #d1d5db;
+  color: #e5e7eb;
   transition: all 0.3s ease;
   white-space: nowrap;
 }
 .skill-pill:hover {
-  border-color: rgba(74, 124, 255, 0.5);
-  background: rgba(74, 124, 255, 0.1);
+  border-color: rgba(74, 124, 255, 0.7);
+  background: rgba(74, 124, 255, 0.2);
   color: #ffffff;
 }
 

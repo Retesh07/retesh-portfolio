@@ -72,7 +72,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="text-[13px] tracking-[0.3em] text-white/50 font-medium mb-6"
+          className="text-[13px] tracking-[0.3em] text-white/80 font-medium mb-6"
         >
           PORTFOLIO
         </motion.p>
@@ -116,7 +116,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.8 }}
-          className="mt-10 flex items-center gap-4"
+          className="mt-10 flex items-center gap-4 flex-wrap justify-center"
         >
           <motion.a
             href="#projects"
@@ -138,7 +138,7 @@ export default function HeroSection() {
             }}
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.97 }}
-            className="px-7 py-3 rounded-full border border-white/20 text-white/70 text-[12px] font-bold tracking-[0.15em] hover:border-white/40 hover:text-white transition-all duration-300"
+            className="px-7 py-3 rounded-full border border-white/35 text-white/90 text-[12px] font-bold tracking-[0.15em] hover:border-white/60 hover:text-white transition-all duration-300 bg-white/5"
           >
             GET IN TOUCH
           </motion.a>
@@ -152,11 +152,11 @@ export default function HeroSection() {
         transition={{ duration: 1, delay: 2.2 }}
         className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 z-10"
       >
-        <span className="text-[11px] tracking-[0.3em] text-white/40 font-medium">
+        <span className="text-[11px] tracking-[0.3em] text-white/75 font-medium">
           SCROLL
         </span>
         <motion.div
-          className="w-[1px] h-16 bg-gradient-to-b from-white/40 to-transparent"
+          className="w-[1px] h-16 bg-gradient-to-b from-white/70 to-transparent"
           animate={{ scaleY: [1, 0.4, 1], opacity: [0.6, 1, 0.6] }}
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
           style={{ transformOrigin: "top" }}

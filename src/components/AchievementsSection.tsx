@@ -43,7 +43,7 @@ function AchievementCard({ ach, index }: { ach: typeof achievements[0]; index: n
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={handleMouseLeave}
         style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
-        className="relative p-8 rounded-[24px] bg-white/5 border border-white/10 hover:border-white/25 hover:bg-white/8 transition-colors duration-400 backdrop-blur-sm overflow-hidden group cursor-pointer flex flex-col justify-between h-full"
+        className="relative p-8 rounded-[24px] bg-white/10 border border-white/20 hover:border-white/40 hover:bg-white/15 transition-colors duration-400 backdrop-blur-md overflow-hidden group cursor-pointer flex flex-col justify-between h-full"
         onClick={() => {
           if (ach.link) window.open(ach.link, "_blank", "noopener,noreferrer");
         }}
@@ -52,7 +52,7 @@ function AchievementCard({ ach, index }: { ach: typeof achievements[0]; index: n
         <motion.div
           className="absolute inset-0 pointer-events-none rounded-[24px]"
           style={{
-            background: `radial-gradient(circle at ${glowX}% ${glowY}%, rgba(74,124,255,0.12) 0%, transparent 60%)`,
+            background: `radial-gradient(circle at ${glowX}% ${glowY}%, rgba(74,124,255,0.15) 0%, transparent 60%)`,
             opacity: hovered ? 1 : 0,
             transition: "opacity 0.3s",
           }}
@@ -80,8 +80,8 @@ function AchievementCard({ ach, index }: { ach: typeof achievements[0]; index: n
             </motion.div>
             {ach.link && (
               <motion.span
-                animate={hovered ? { scale: 1.1, opacity: 1 } : { scale: 1, opacity: 0.5 }}
-                className="text-xs tracking-wider text-white/70 font-semibold flex items-center gap-1 bg-white/10 px-3 py-1 rounded-full border border-white/15"
+                animate={hovered ? { scale: 1.1, opacity: 1 } : { scale: 1, opacity: 0.85 }}
+                className="text-xs tracking-wider text-white/90 font-semibold flex items-center gap-1 bg-white/15 px-3 py-1 rounded-full border border-white/25"
               >
                 PROFILE
                 <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -101,7 +101,7 @@ function AchievementCard({ ach, index }: { ach: typeof achievements[0]; index: n
           </motion.h3>
 
           {/* Description */}
-          <p className="text-white/60 text-sm leading-relaxed relative z-10 group-hover:text-white/75 transition-colors duration-300">
+          <p className="text-white/85 text-sm leading-relaxed relative z-10 group-hover:text-white transition-colors duration-300">
             {ach.description}
           </p>
         </div>
@@ -121,16 +121,24 @@ function AchievementCard({ ach, index }: { ach: typeof achievements[0]; index: n
 export default function AchievementsSection() {
   return (
     <section id="achievements" className="relative">
-      <div className="light-section light-section-bottom py-24 md:py-32">
+      <div className="light-section light-section-bottom py-16 md:py-28">
         <div className="max-w-[1400px] mx-auto px-6 md:px-12">
           {/* Heading */}
-          <div className="overflow-hidden mb-20">
+          <div className="text-center mb-10 md:mb-16">
+            <motion.p
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-[11px] md:text-[12px] tracking-[0.25em] text-blue-400 font-semibold uppercase mb-2"
+            >
+              RECOGNITION & AWARDS
+            </motion.p>
             <motion.h2
-              initial={{ y: 80, opacity: 0 }}
+              initial={{ y: 25, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: false, margin: "-100px" }}
-              transition={{ duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
-              className="section-heading-massive text-center metallic-text"
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="section-heading-massive metallic-text"
             >
               ACHIEVEMENTS
             </motion.h2>

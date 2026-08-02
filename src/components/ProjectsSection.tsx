@@ -80,7 +80,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
 
             <div>
               {/* Category tag */}
-              <p className="text-[13px] tracking-[0.22em] text-white/40 font-medium mb-2">
+              <p className="text-[13px] tracking-[0.22em] text-white/70 font-medium mb-2">
                 {project.category}
               </p>
               {/* Title */}
@@ -103,7 +103,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.06, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                className="flex items-center gap-2 px-5 py-2.5 rounded-full border border-white/15 text-[11px] tracking-[0.15em] font-medium text-white/70 hover:text-white hover:border-white/40 hover:bg-white/5 transition-all duration-300"
+                className="flex items-center gap-2 px-5 py-2.5 rounded-full border border-white/25 text-[11px] tracking-[0.15em] font-medium text-white/90 hover:text-white hover:border-white/50 hover:bg-white/10 transition-all duration-300"
                 onClick={(e) => e.stopPropagation()}
               >
                 <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
@@ -120,7 +120,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.06, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                className="flex items-center gap-2 px-6 py-2.5 rounded-full border border-white/20 text-[11px] tracking-[0.15em] font-semibold text-white bg-white/5 hover:bg-white hover:text-black transition-all duration-300"
+                className="flex items-center gap-2 px-6 py-2.5 rounded-full border border-white/25 text-[11px] tracking-[0.15em] font-semibold text-white bg-white/10 hover:bg-white hover:text-black transition-all duration-300"
                 onClick={(e) => e.stopPropagation()}
               >
                 {project.liveUrl.includes("github.com") ? "VIEW REPO" : "LIVE DEMO"}
@@ -143,10 +143,10 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
         {/* Tech badge */}
         <motion.div
           className="mb-6 relative z-10"
-          animate={isHovered ? { opacity: 1 } : { opacity: 0.7 }}
+          animate={isHovered ? { opacity: 1 } : { opacity: 0.85 }}
           transition={{ duration: 0.3 }}
         >
-          <span className="inline-block px-3.5 py-1 rounded-md bg-white/[0.04] border border-white/10 text-[13px] tracking-wide text-white/60 font-mono">
+          <span className="inline-block px-3.5 py-1 rounded-md bg-white/[0.08] border border-white/20 text-[13px] tracking-wide text-white/85 font-mono">
             {project.tech}
           </span>
         </motion.div>
@@ -163,11 +163,11 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
               className="flex items-start gap-3"
             >
               <motion.span
-                animate={isHovered ? { backgroundColor: "#4a7cff", scale: 1.25 } : { backgroundColor: "rgba(255,255,255,0.3)", scale: 1 }}
+                animate={isHovered ? { backgroundColor: "#4a7cff", scale: 1.25 } : { backgroundColor: "rgba(255,255,255,0.5)", scale: 1 }}
                 transition={{ duration: 0.3 }}
                 className="mt-2.5 w-1.5 h-1.5 rounded-full shrink-0"
               />
-              <p className="text-white/65 text-sm md:text-[15px] leading-relaxed tracking-[0.01em] group-hover:text-white/90 transition-colors duration-300">
+              <p className="text-white/85 text-sm md:text-[15px] leading-relaxed tracking-[0.01em] group-hover:text-white transition-colors duration-300">
                 {desc}
               </p>
             </motion.div>
@@ -180,16 +180,24 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
 
 export default function ProjectsSection() {
   return (
-    <section id="projects" className="relative py-24 md:py-32 bg-transparent">
+    <section id="projects" className="relative py-16 md:py-28 bg-transparent">
       <div className="max-w-[1400px] mx-auto px-6 md:px-12">
         {/* Heading */}
-        <div className="overflow-hidden mb-24">
+        <div className="text-center mb-10 md:mb-16">
+          <motion.p
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-[11px] md:text-[12px] tracking-[0.25em] text-blue-400 font-semibold uppercase mb-2"
+          >
+            FEATURED WORK
+          </motion.p>
           <motion.h2
-            initial={{ y: 80, opacity: 0 }}
+            initial={{ y: 25, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
-            viewport={{ once: false, margin: "-100px" }}
-            transition={{ duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="section-heading-massive text-center metallic-text"
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="section-heading-massive metallic-text"
           >
             PROJECTS
           </motion.h2>

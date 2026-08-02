@@ -127,15 +127,15 @@ function ContactCard({ item, index }: { item: typeof contactItems[0]; index: num
         </div>
 
         {/* Label */}
-        <p className="text-[11px] tracking-[0.2em] text-white/30 font-medium mb-2 relative z-10">
+        <p className="text-[11px] tracking-[0.2em] text-white/70 font-medium mb-2 relative z-10">
           {item.label}
         </p>
 
         {/* Value */}
         <motion.p
-          animate={hovered ? { x: 4, color: "rgba(255,255,255,1)" } : { x: 0, color: "rgba(255,255,255,0.9)" }}
+          animate={hovered ? { x: 4, color: "rgba(255,255,255,1)" } : { x: 0, color: "rgba(255,255,255,0.95)" }}
           transition={{ duration: 0.3 }}
-          className="font-semibold text-sm md:text-base break-all relative z-10"
+          className="font-semibold text-sm md:text-base break-all relative z-10 text-white"
         >
           {item.value}
         </motion.p>
@@ -155,7 +155,7 @@ function ContactCard({ item, index }: { item: typeof contactItems[0]; index: num
 
 export default function ContactSection() {
   return (
-    <section id="contact" className="relative py-24 md:py-32 bg-transparent">
+    <section id="contact" className="relative py-16 md:py-32 bg-transparent">
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
@@ -165,28 +165,34 @@ export default function ContactSection() {
 
       <div className="relative max-w-[1400px] mx-auto px-6 md:px-12">
         {/* Heading */}
-        <div className="overflow-hidden mb-6">
+        <div className="text-center mb-10 md:mb-14">
+          <motion.p
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-[11px] md:text-[12px] tracking-[0.25em] text-purple-400 font-semibold uppercase mb-2"
+          >
+            LET'S CONNECT
+          </motion.p>
           <motion.h2
-            initial={{ y: 80, opacity: 0 }}
+            initial={{ y: 25, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
-            viewport={{ once: false, margin: "-100px" }}
-            transition={{ duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="section-heading-massive text-center metallic-text"
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="section-heading-massive metallic-text"
           >
             GET IN TOUCH
           </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+            className="text-center text-[12px] md:text-[13px] tracking-[0.2em] text-white/70 font-medium mt-4"
+          >
+            PICK WHICHEVER CHANNEL SUITS YOU
+          </motion.p>
         </div>
-
-        {/* Subtitle */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-center text-[13px] tracking-[0.25em] text-white/40 font-medium mb-20"
-        >
-          PICK WHICHEVER CHANNEL SUITS YOU
-        </motion.p>
 
         {/* Contact cards grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">

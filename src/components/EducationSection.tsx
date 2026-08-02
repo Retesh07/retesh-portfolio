@@ -30,16 +30,24 @@ export default function EducationSection() {
   };
 
   return (
-    <section id="education" className="relative py-24 md:py-32 bg-transparent">
+    <section id="education" className="relative py-16 md:py-28 bg-transparent">
       <div className="max-w-[1400px] mx-auto px-6 md:px-12">
         {/* Heading */}
-        <div className="overflow-hidden mb-12">
+        <div className="text-center mb-10 md:mb-12">
+          <motion.p
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-[11px] md:text-[12px] tracking-[0.25em] text-purple-400 font-semibold uppercase mb-2"
+          >
+            ACADEMIC BACKGROUND
+          </motion.p>
           <motion.h2
-            initial={{ y: 80, opacity: 0 }}
+            initial={{ y: 25, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
-            viewport={{ once: false, margin: "-100px" }}
-            transition={{ duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="section-heading-massive text-center metallic-text"
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="section-heading-massive metallic-text"
           >
             EDUCATION
           </motion.h2>
@@ -49,7 +57,7 @@ export default function EducationSection() {
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true, margin: "-20px" }}
           transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
           style={{ perspective: 1000 }}
           className="max-w-3xl mx-auto"
@@ -92,19 +100,19 @@ export default function EducationSection() {
                 >
                   {education.institution}
                 </motion.h3>
-                <p className="text-white/60 text-sm md:text-base">
+                <p className="text-white/85 text-sm md:text-base">
                   {education.degree}
                 </p>
               </div>
               <div className="text-left md:text-right">
                 <motion.p
-                  animate={hovered ? { color: "rgba(255,255,255,0.6)" } : { color: "rgba(255,255,255,0.4)" }}
+                  animate={hovered ? { color: "rgba(255,255,255,0.9)" } : { color: "rgba(255,255,255,0.75)" }}
                   transition={{ duration: 0.3 }}
                   className="text-[13px] tracking-[0.15em] font-medium"
                 >
                   {education.duration}
                 </motion.p>
-                <p className="text-[13px] tracking-[0.15em] text-white/30 mt-1">
+                <p className="text-[13px] tracking-[0.15em] text-white/65 mt-1">
                   {education.location}
                 </p>
               </div>
@@ -121,21 +129,21 @@ export default function EducationSection() {
                 className="flex items-start gap-3 mb-4 relative z-10"
               >
                 <motion.span
-                  animate={hovered ? { scale: 1.3, color: "#4a7cff" } : { scale: 1, color: "rgba(74,124,255,0.7)" }}
+                  animate={hovered ? { scale: 1.3, color: "#4a7cff" } : { scale: 1, color: "rgba(74,124,255,0.9)" }}
                   transition={{ duration: 0.3 }}
                   className="mt-1 text-sm"
                 >
                   ✦
                 </motion.span>
-                <p className="text-white/60 text-sm leading-relaxed group-hover:text-white/75">
+                <p className="text-white/85 text-sm leading-relaxed group-hover:text-white">
                   {h}
                 </p>
               </motion.div>
             ))}
 
             {/* Coursework */}
-            <div className="mt-6 pt-6 border-t border-white/5 relative z-10">
-              <p className="text-[11px] tracking-[0.2em] text-white/30 font-medium mb-3">
+            <div className="mt-6 pt-6 border-t border-white/15 relative z-10">
+              <p className="text-[11px] tracking-[0.2em] text-white/65 font-medium mb-3">
                 RELEVANT COURSEWORK
               </p>
               <div className="flex flex-wrap gap-2">
