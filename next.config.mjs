@@ -3,9 +3,6 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  devIndicators: {
-    position: 'bottom-right',
-  },
   eslint: {
     ignoreDuringBuilds: true,
   },
