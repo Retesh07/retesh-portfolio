@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
-import { aboutBio, skillCategories, personalInfo } from "@/data/resume";
+import { aboutBio, skillCategories } from "@/data/resume";
 
 function ScrollRevealText({ text }: { text: string }) {
   const containerRef = useRef<HTMLParagraphElement>(null);

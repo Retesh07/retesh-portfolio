@@ -80,7 +80,7 @@ export default function HeroSection() {
         {/* Name — with mouse parallax */}
         <div className="overflow-visible">
           <motion.h1
-            style={{ x: firstX, y: firstY }}
+            style={{ x: firstX, y: firstY, textShadow: "0 4px 40px rgba(0,0,0,0.5)" }}
             initial={{ y: 120, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{
@@ -89,14 +89,13 @@ export default function HeroSection() {
               ease: [0.25, 0.46, 0.45, 0.94],
             }}
             className="text-[clamp(3.5rem,12vw,10rem)] font-black leading-[0.9] tracking-[-0.03em] text-white select-none"
-            style={{ textShadow: "0 4px 40px rgba(0,0,0,0.5)" }}
           >
             {personalInfo.firstName}
           </motion.h1>
         </div>
         <div className="overflow-visible">
           <motion.h1
-            style={{ x: lastX, y: lastY }}
+            style={{ x: lastX, y: lastY, textShadow: "0 4px 40px rgba(0,0,0,0.5)" }}
             initial={{ y: 120, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{
@@ -105,7 +104,6 @@ export default function HeroSection() {
               ease: [0.25, 0.46, 0.45, 0.94],
             }}
             className="text-[clamp(3.5rem,12vw,10rem)] font-black leading-[0.9] tracking-[-0.03em] text-white select-none"
-            style={{ textShadow: "0 4px 40px rgba(0,0,0,0.5)" }}
           >
             {personalInfo.lastName}
           </motion.h1>
