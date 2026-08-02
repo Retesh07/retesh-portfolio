@@ -74,7 +74,7 @@ export default function HeroSection() {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="text-[13px] tracking-[0.3em] text-white/50 font-medium mb-6"
         >
-          PORTFOLIO · {personalInfo.portfolioYear}
+          PORTFOLIO
         </motion.p>
 
         {/* Name — with mouse parallax */}

@@ -1,7 +1,7 @@
-# ⚡ Retesh G.S — Personal Portfolio (2026)
+# ⚡ Retesh G.S — Personal Portfolio
 
 > **Computer Science Student · Full-Stack Developer · AI/ML & Systems Enthusiast**
-> PES University, Bengaluru, India
+> PES University, India
 
 ---
 

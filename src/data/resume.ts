@@ -45,19 +45,18 @@ export const personalInfo = {
   role: "COMPUTER SCIENCE STUDENT · FULL-STACK DEVELOPER · TECH ENTHUSIAST",
   email: "reteshgs2005@gmail.com",
   phone: "+91-7975459789",
-  location: "Bengaluru, Karnataka, India",
+  location: "India",
   github: "github.com/Retesh07",
   githubUrl: "https://github.com/Retesh07",
   linkedin: "linkedin.com/in/retesh-g-s",
   linkedinUrl: "https://linkedin.com/in/retesh-g-s",
   leetcode: "leetcode.com/u/reteshgs2005",
   leetcodeUrl: "https://leetcode.com/u/reteshgs2005/",
-  portfolioYear: "2026",
 };
 
 // ── About / Bio ────────────────────────────────────────────────
 export const aboutBio =
-  "I'm a Computer Science student at PES University, Bengaluru, with a strong interest in AI-powered applications, backend engineering, and scalable systems. My work includes Agentic RAG platforms, LLM-based applications, distributed systems, and full-stack development. As a 4× CNR Rao Merit Scholar and 1st-place Ideathon winner, I enjoy building practical solutions that combine innovation, performance, and real-world impact.";
+  "I'm a Computer Science student at PES University with a strong interest in AI-powered applications, backend engineering, and scalable systems. My work includes Agentic RAG platforms, LLM-based applications, distributed systems, and full-stack development. As a 4× CNR Rao Merit Scholar and 1st-place Ideathon winner, I enjoy building practical solutions that combine innovation, performance, and real-world impact.";
 
 // ── Education ──────────────────────────────────────────────────
 export const education = {
@@ -65,7 +64,7 @@ export const education = {
   degree: "Bachelor of Technology in Computer Science",
   cgpa: "8.53 / 10.0",
   duration: "Aug 2023 – May 2027",
-  location: "Bengaluru, India",
+  location: "India",
   highlights: [
     "4× CNR Rao Merit Scholarship recipient for maintaining top 25% academic standing",
   ],

@@ -19,10 +19,10 @@ export default function Footer() {
         {/* Footer content — matching reference */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-[12px] tracking-[0.2em] text-white/30 font-medium">
-            © {personalInfo.portfolioYear} {personalInfo.name}
+            © {new Date().getFullYear()} {personalInfo.name}
           </p>
           <p className="text-[12px] tracking-[0.2em] text-white/30 font-medium">
-            DESIGNED & BUILT IN BENGALURU
+            DESIGNED & BUILT WITH PASSION
           </p>
         </div>
       </div>
