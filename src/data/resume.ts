@@ -14,7 +14,7 @@ export interface Project {
   tech: string;
   description: string[];
   githubUrl: string;
-  liveUrl: string;
+  liveUrl?: string;
 }
 
 export interface Achievement {
@@ -212,8 +212,7 @@ export const projects: Project[] = [
       "Built an interactive Flask monitoring dashboard visualizing active node statuses, chunk distribution, and cluster health metrics",
       "Optimized concurrent client request handling using Python multi-threading for seamless multi-file uploads and retrieval operations",
     ],
-    githubUrl: "https://github.com/Retesh07/Mini-HDFS-Simulation-Exploring-Distributed-Data-Storage",
-    liveUrl: "https://github.com/Retesh07/Mini-HDFS-Simulation-Exploring-Distributed-Data-Storage",
+    githubUrl: "https://github.com/Retesh07/Mini-HDFS-Simulation",
   },
 ];
 

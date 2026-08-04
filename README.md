@@ -44,7 +44,7 @@ A modern, high-performance, kinetic typography developer portfolio built with **
    * Natural Language-to-SQL platform translating plain English queries into safe, executable database queries.
 
 4. **MINI HDFS SIMULATION** *(Distributed Systems)*
-   * 💻 **GitHub Repo**: [Mini-HDFS-Simulation](https://github.com/Retesh07/Mini-HDFS-Simulation-Exploring-Distributed-Data-Storage)
+   * 💻 **GitHub Repo**: [Mini-HDFS-Simulation](https://github.com/Retesh07/Mini-HDFS-Simulation)
    * 💻 **Tech**: Python Sockets, Flask, Multi-threading
    * Distributed file storage engine with chunk splitting, 2× replication, and heartbeat monitoring.
 
