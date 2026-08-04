@@ -72,7 +72,7 @@ function ContactCard({ item, index }: { item: typeof contactItems[0]; index: num
       <motion.a
         ref={cardRef}
         href={item.href}
-        target={item.icon === "email" || item.icon === "phone" ? "_self" : "_blank"}
+        target={item.icon === "phone" ? "_self" : "_blank"}
         rel="noopener noreferrer"
         onMouseMove={handleMouseMove}
         onMouseEnter={() => setHovered(true)}

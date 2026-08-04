@@ -100,7 +100,9 @@ export default function Navbar() {
 
           {/* Email Me CTA */}
           <a
-            href={`mailto:${personalInfo.email}`}
+            href={`https://mail.google.com/mail/?view=cm&fs=1&to=${personalInfo.email}`}
+            target="_blank"
+            rel="noopener noreferrer"
             className="hidden md:flex items-center gap-2 px-6 py-2.5 rounded-full border border-white/20 text-[13px] font-medium tracking-[0.15em] text-white/80 hover:text-white hover:border-white/40 hover:bg-white/5 transition-all duration-300"
           >
             EMAIL ME
@@ -132,7 +134,9 @@ export default function Navbar() {
               </motion.a>
             ))}
             <motion.a
-              href={`mailto:${personalInfo.email}`}
+              href={`https://mail.google.com/mail/?view=cm&fs=1&to=${personalInfo.email}`}
+              target="_blank"
+              rel="noopener noreferrer"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}

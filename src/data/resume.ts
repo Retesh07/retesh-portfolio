@@ -245,7 +245,7 @@ export const contactItems: ContactItem[] = [
     icon: "email",
     label: "EMAIL",
     value: "reteshgs2005@gmail.com",
-    href: "mailto:reteshgs2005@gmail.com",
+    href: "https://mail.google.com/mail/?view=cm&fs=1&to=reteshgs2005@gmail.com",
   },
   {
     icon: "linkedin",
