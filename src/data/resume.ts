@@ -232,9 +232,9 @@ export const achievements: Achievement[] = [
   },
   {
     icon: "⚡",
-    title: "Problem Solving & DSA — LeetCode",
+    title: "Data Structures & Algorithms — LeetCode",
     description:
-      "Active problem solver on LeetCode (@reteshgs2005) focusing on Data Structures, Algorithms, Graph theory, Dynamic Programming, and spatial/time complexity optimization.",
+      "Solved 350+ algorithmic problems on LeetCode covering Arrays, Graphs, Trees, Dynamic Programming, Binary Search, Greedy, and Advanced Data Structures.",
     link: "https://leetcode.com/u/reteshgs2005/",
   },
 ];
