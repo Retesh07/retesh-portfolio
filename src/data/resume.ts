@@ -169,7 +169,7 @@ export const projects: Project[] = [
       "Leveraged ChromaDB vector store with HuggingFace embeddings for high-speed, relevant semantic document retrieval",
       "Evaluated system performance using RAGAS retrieval metrics and configured LangSmith tracing for end-to-end LLM execution monitoring",
     ],
-    githubUrl: "https://github.com/Retesh07/DocMind-AI",
+    githubUrl: "https://github.com/Retesh07/DOCMIND_AI",
     liveUrl: "https://retesh-doc-mind-ai.hf.space/",
   },
   {
@@ -213,6 +213,32 @@ export const projects: Project[] = [
       "Optimized concurrent client request handling using Python multi-threading for seamless multi-file uploads and retrieval operations",
     ],
     githubUrl: "https://github.com/Retesh07/Mini-HDFS-Simulation",
+  },
+  {
+    number: "05",
+    category: "FULL-STACK / FINTECH PLATFORM",
+    title: "STOCKERX",
+    tech: "React, Vite, Tailwind CSS, Node.js, Express, MongoDB, Mongoose, JWT, Yahoo Finance API",
+    description: [
+      "Built an Indian equity paper-trading platform with live-refreshing quotes for top Nifty 50 stocks, interactive price charts, and search and sector filtering",
+      "Implemented guarded, atomic buy and sell execution with MongoDB to prevent double-spending and overselling",
+      "Created a portfolio dashboard with unrealized P&L, position weights, cash balance, transaction history, and a ranked trader leaderboard",
+      "Added Yahoo Finance market-data integration with 15-second in-memory caching and resilient stale-data fallback",
+    ],
+    githubUrl: "https://github.com/Retesh07/StockerX",
+  },
+  {
+    number: "06",
+    category: "CAPSTONE / AI SURVEILLANCE SYSTEM",
+    title: "AI-DRIVEN ANOMALY DETECTION",
+    tech: "Python, PyTorch, YOLOv8, ByteTrack, OpenCV, YuNet, SFace, Raspberry Pi",
+    description: [
+      "Developed a real-time, edge-deployable surveillance intelligence capstone that detects aggressive behavior, weapons, and suspicious loitering from video streams",
+      "Combined YOLOv8 pose detection, ByteTrack person tracking, a Bi-LSTM attention violence model, and YOLO-based weapon detection per tracked person",
+      "Designed an explainable temporal fusion engine that produces Normal-to-Critical threat levels with rule-based escalation and false-alert suppression",
+      "Integrated face recognition for known-person awareness, live visual alerts, JSON event logging, recording, and post-session analytics",
+    ],
+    githubUrl: "https://github.com/Retesh07/AI---Driven-Anamoly-Detection-System",
   },
 ];
 
